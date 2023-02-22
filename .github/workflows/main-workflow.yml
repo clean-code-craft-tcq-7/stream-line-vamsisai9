@@ -35,3 +35,30 @@ jobs:
           name: coverage
           path: ./htmlcov
           retention-days: 21
+
+      - name: install coverage tool
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcovr
+
+      - name: build reciever
+        run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o BMS_Receiver BMS_Receiver/*.c
+        
+      - name: run help
+        run: ./BMS_Receiver -h
+
+      - name: run test
+        run: ./BMS_Receiver -t
+
+      - name: run application
+        run: ./BMS_Receiver -r
+
+      - name: collect coverage
+        run: gcovr --gcov-exclude=".*test.*" -r . --html --html-details -o coverage.html --print-summary
+
+      - name: Upload Receiver coverage
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: ./htmlcov
+          retention-days: 21
