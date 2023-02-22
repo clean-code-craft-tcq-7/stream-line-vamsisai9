@@ -42,7 +42,7 @@ jobs:
           sudo apt-get install -y gcovr
 
       - name: build reciever
-        run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o BMS_Receiver BMS_Receiver/*.c
+        run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o BMS_Receiver BMS_Receiver_src/*.c
         
       - name: run help
         run: ./BMS_Receiver -h
