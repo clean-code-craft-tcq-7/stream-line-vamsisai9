@@ -1,0 +1,2 @@
+void testReadHeader();
+void testReadSamples();
