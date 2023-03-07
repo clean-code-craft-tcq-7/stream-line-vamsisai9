@@ -89,7 +89,7 @@ void findAndPrintMinMaxValues(receiverDataSet *sensorData, int sensorCount, bmsO
 {
     float minValue = 0, maxValue = 0;
     int sensorIndex = 0, printMsgSize = 0;
-    char printMsg[100] = {0};
+    char printMsg[500] = {0};
 
     for(; sensorIndex < sensorCount; sensorIndex++)
     {

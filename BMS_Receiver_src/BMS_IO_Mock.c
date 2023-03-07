@@ -9,9 +9,8 @@ int nextCharIndex = 0;
 
 void mockReceiverOutput(char *ptr, int size)
 {
-    memset(TestOutputBuffer, 0, 1000);
-    strncpy(TestOutputBuffer, ptr, size);
-    TestOutputSize = size;
+    strncpy(&TestOutputBuffer[TestOutputSize], ptr, size);
+    TestOutputSize += size;
 }
 
 int mockInputFromConsole(char *ptr, int size)
