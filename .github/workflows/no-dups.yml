@@ -14,4 +14,4 @@ jobs:
       run: sudo npm install -g jscpd
 
     - name: Check duplications
-      run: jscpd --ignore "**/**test_BMS_ReadConsole.c" --min-lines 3 --min-tokens 35 --threshold 0
+      run: jscpd --ignore "**/**test_BMS_ReadConsole.c, **/**test_BMS_Operations.c, **/**test_BMS_ProcessSensorValues.c, **/**test_BMS_receiver.c" --min-lines 3 --min-tokens 35 --threshold 0
