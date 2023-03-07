@@ -19,5 +19,6 @@ typedef struct
 }receiverDataSet;
 
 void receiveStreamData();
+void setStreamIoFunc(bmsInputFuncPtr inputFuncPtr, bmsOutputFuncPtr outputFuncPtr);
 
 #endif
